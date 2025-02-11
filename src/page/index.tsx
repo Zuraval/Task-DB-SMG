@@ -57,7 +57,7 @@ export default function Main() {
   };
 
   return (
-    <div className="main-container w-[1920px] h-[1988px] text-[0px] bg-[#f1f3f7] rounded-[16px] relative overflow-hidden mx-auto my-0">
+    <div className="main-container w-[1920px] h-auto text-[0px] bg-[#f1f3f7] rounded-[16px] relative overflow-hidden mx-auto my-0 pb-14">
       <span className="block h-[13px] font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#c00000] relative text-left whitespace-nowrap z-[457] mt-[148px] mr-0 mb-0 ml-[116px] cursor-pointer w-min">
         Назад в Реестр объектов
       </span>
@@ -1236,12 +1236,13 @@ export default function Main() {
             <div className="flex w-[32px] h-[54px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[url(../assets/images/67ba9b0a-f2d9-4bce-a670-7297bf8b0851.png)] bg-cover bg-no-repeat relative z-[293]" onClick={handlePrevSlide}/>
             <Swiper
               onSwiper={(swiper: SwiperRef) => (swiperRef.current = swiper)}
-              slidesPerView={8}
+              slidesPerView="auto"
+              spaceBetween={20}
               modules={[Navigation]}
               className="flex w-full h-[54px] items-end flex-nowrap z-[292]"
             >
               <SwiperSlide>
-                <div className="flex w-[129px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[294]">
+                <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[294]">
                   <span className="flex w-[129px] h-[40px] justify-center items-start shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[295]">
                     Устройство подземной части
                   </span>
@@ -1249,7 +1250,7 @@ export default function Main() {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[139px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[297]">
+              <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[297]">
                 <span className="flex w-[139px] h-[40px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[298]">
                   Устройство надземной части
                 </span>
@@ -1257,7 +1258,7 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[164px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[300]">
+              <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[300]">
                 <span className="flex w-[164px] h-[40px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[301]">
                   Устройство инженерных систем
                 </span>
@@ -1265,7 +1266,7 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[140px] h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[303]">
+              <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[303]">
                 <span className="flex w-[140px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[304]">
                   Отделочные работы
                 </span>
@@ -1273,7 +1274,7 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[205px] h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[306]">
+              <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[306]">
                 <span className="flex w-[205px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[307]">
                   Благоустройство территории
                 </span>
@@ -1281,15 +1282,15 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[125px] h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[309]">
-                <span className="flex w-[125px] justify-center items-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[310]">
+              <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[309]">
+                <span className="flex w-[125px] justify-center items-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[310] mx-auto">
                   Получение ЗОС
                 </span>
                 <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/a1117613-6725-4c6a-a6ed-cf2dab2530af.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[311]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[140px] h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[312]">
+              <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[312]">
                 <span className="flex w-[140px] justify-center items-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[313]">
                   Получение РВ
                 </span>
@@ -1297,7 +1298,7 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[148px] h-[54px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[315]">
+              <div className="flex h-[54px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[315]">
                 <span className="flex w-[148px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[316]">
                   Постановка
                   <br />
@@ -1307,7 +1308,7 @@ export default function Main() {
               </div>
               </SwiperSlide>
               <SwiperSlide>
-              <div className="flex w-[146px] h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap opacity-30 relative z-[318]">
+              <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap opacity-30 relative z-[318]">
                 <span className="flex w-[121px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[319]">
                   Передача
                   <br />
