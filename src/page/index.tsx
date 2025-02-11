@@ -113,7 +113,7 @@ export default function Main() {
           </span>
         </div>
       </div>
-      <div className={`flex w-[1697px] pt-[36px] pr-[10px] pb-[36px] pl-[36px] flex-col gap-[48px] items-start flex-nowrap bg-[#fff] rounded-[12px] relative z-[390] mt-[16px] mr-0 mb-0 ml-[111px] ${isExpanded ? 'h-auto' : 'h-[470px]'}`}>
+      <div className={`flex w-[1697px] pt-[36px] pr-[10px] pb-[34px] pl-[36px] flex-col gap-[48px] items-start flex-nowrap bg-[#fff] rounded-[12px] relative z-[390] mt-[16px] mr-0 mb-0 ml-[111px] ${isExpanded ? 'h-auto' : 'h-[470px]'}`}>
         <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[391]">
           <div className="flex w-[1279px] gap-[10px] items-center shrink-0 flex-nowrap relative z-[392]">
             <span className="flex w-[690px] h-[17px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[24px] font-semibold leading-[16px] text-[#161616] relative text-left whitespace-nowrap z-[393]">
@@ -152,11 +152,11 @@ export default function Main() {
               </span>
             </button>
           </div>
-          <div className="flex w-[53px] h-[32px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap relative z-[406]"onClick={() => setIsExpanded(!isExpanded)}onKeyDown={(e) => {if (e.key === 'Enter' || e.key === ' ') {setIsExpanded(!isExpanded);}}}>
+          <div className="flex w-[53px] h-[32px] mr-[12px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap relative z-[406]"onClick={() => setIsExpanded(!isExpanded)}onKeyDown={(e) => {if (e.key === 'Enter' || e.key === ' ') {setIsExpanded(!isExpanded);}}}>
             <div className={`w-[27px] h-[11px] shrink-0 bg-[url(../assets/images/599f00b9-d766-44d9-985f-51079ba1d336.png)] bg-cover bg-no-repeat relative z-[407] ${isExpanded ? 'rotate-180' : ''}`} />
           </div>
         </div>
-        <div className="flex w-[1625px] flex-col gap-[16px] items-start shrink-0 flex-nowrap relative z-[408]">
+        <div className="flex w-[1625px] flex-col gap-[26px] items-start shrink-0 flex-nowrap relative z-[408]">
           <div className="flex w-[1625px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[77px] items-start shrink-0 flex-nowrap rounded-[8px] relative z-[409]">
             <div className="flex w-[1585px] h-[38px] justify-between items-center shrink-0 flex-nowrap relative z-[410]">
               <div className="flex w-[180px] items-center shrink-0 flex-nowrap relative z-[411]">
@@ -196,7 +196,7 @@ export default function Main() {
               </div>
             </div>
           </div>
-          <div className={`flex w-[1625px] pt-[16px] pr-4 pl-0 flex-col justify-between items-start shrink-0 flex-nowrap rounded-[8px] relative z-[425] overflow-x-hidden gap-[20px] ${isExpanded ? 'h-auto pb-0' : 'h-[282px] pb-[16px]'}`}>
+          <div className={`flex w-auto pt-0 pr-4 pl-0 flex-col justify-between items-start shrink-0 flex-nowrap rounded-[8px] relative z-[425] overflow-x-hidden gap-[20px] ${isExpanded ? 'h-auto pb-0' : 'h-[255px] pb-[0px]'}`}>
             <div className="flex w-[1625px] pt-[16px] pr-[16px] pb-[16px] pl-[24px] justify-between items-start shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[8px] border-solid border border-[#c00000] relative z-[426]">
               <div className="flex w-[180px] h-[83px] items-center shrink-0 flex-nowrap relative z-[427]">
                 <span className="flex w-[180px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[20px] text-[#000] relative text-left z-[428]">
@@ -657,8 +657,8 @@ export default function Main() {
             </span>
           </div>
         </div>
-        <div className="flex w-[803px] h-[680px] pt-[24px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[8px] items-start flex-nowrap bg-[#fff] rounded-[12px] absolute top-[177px] left-[898px] overflow-hidden shadow-[0_10px_50px_0_#d2d4d8] z-[37] overflow-y-auto">
-          <div className="flex w-[755px] pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[24px] items-start shrink-0 flex-nowrap bg-[#fff] rounded-[10px] border-solid border-2 border-[#e4e6ea] relative z-[38]">
+        <div className="flex w-auto h-[680px] pt-[24px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[8px] items-start flex-nowrap bg-[#fff] rounded-[12px] absolute top-[177px] left-[898px] overflow-hidden shadow-[0_10px_50px_0_#d2d4d8] z-[37] overflow-y-auto">
+          <div className="flex w-[747px] pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[24px] items-start shrink-0 flex-nowrap bg-[#fff] rounded-[10px] border-solid border-2 border-[#e4e6ea] relative z-[38]">
             <span className="h-[11px] self-stretch shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#161616] relative text-left whitespace-nowrap z-[39]">
               Строительная готовность
             </span>
