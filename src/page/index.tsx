@@ -1236,17 +1236,17 @@ export default function Main() {
             <div className="flex w-[32px] h-[54px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[url(../assets/images/67ba9b0a-f2d9-4bce-a670-7297bf8b0851.png)] bg-cover bg-no-repeat relative z-[293]" onClick={handlePrevSlide}/>
             <Swiper
               onSwiper={(swiper: SwiperRef) => (swiperRef.current = swiper)}
-              slidesPerView="auto"
+              slidesPerView={8}
               spaceBetween={20}
               modules={[Navigation]}
               className="flex w-full h-[54px] items-end flex-nowrap z-[292]"
             >
               <SwiperSlide>
                 <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[294]">
-                  <span className="flex w-[129px] h-[40px] justify-center items-start shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[295]">
+                  <span className="flex w-[129px] h-[40px] mx-auto justify-center items-start shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[295]">
                     Устройство подземной части
                   </span>
-                  <div className="h-[6px] self-stretch shrink-0 bg-[#00863d] rounded-[20px] relative overflow-hidden z-[296]" />
+                  <div className="h-[6px] w-[129px] mx-auto self-stretch shrink-0 bg-[#00863d] rounded-[20px] relative overflow-hidden z-[296]" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -1254,7 +1254,7 @@ export default function Main() {
                 <span className="flex w-[139px] h-[40px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[298]">
                   Устройство надземной части
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/7ca94064-048d-49b9-8f71-a832fe1b644b.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[299]" />
+                <div className="h-[6px] w-[139px] self-stretch shrink-0 bg-[url(../assets/images/7ca94064-048d-49b9-8f71-a832fe1b644b.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[299]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -1262,31 +1262,31 @@ export default function Main() {
                 <span className="flex w-[164px] h-[40px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[301]">
                   Устройство инженерных систем
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/32c62cc1-38fb-4525-bd55-d976eb6adcc9.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[302]" />
+                <div className="h-[6px] w-[164px] self-stretch shrink-0 bg-[url(../assets/images/32c62cc1-38fb-4525-bd55-d976eb6adcc9.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[302]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
               <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[303]">
-                <span className="flex w-[140px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[304]">
+                <span className="flex w-[140px] mx-auto justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[304]">
                   Отделочные работы
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/01550e98-e38d-49eb-a6a1-d1f95df23953.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[305]" />
+                <div className="h-[6px] w-[140px] mx-auto self-stretch shrink-0 bg-[url(../assets/images/01550e98-e38d-49eb-a6a1-d1f95df23953.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[305]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
               <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[306]">
-                <span className="flex w-[205px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[307]">
+                <span className="flex w-[205px] mx-auto justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[307]">
                   Благоустройство территории
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/0d5c86e2-7d7e-45ea-8216-7b60bd277bce.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[308]" />
+                <div className="h-[6px] w-[205px] mx-auto self-stretch shrink-0 bg-[url(../assets/images/0d5c86e2-7d7e-45ea-8216-7b60bd277bce.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[308]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
               <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap relative z-[309]">
-                <span className="flex w-[125px] justify-center items-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[310] mx-auto">
+                <span className="flex w-[125px] ml-auto items-center justify-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[310]">
                   Получение ЗОС
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/a1117613-6725-4c6a-a6ed-cf2dab2530af.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[311]" />
+                <div className="h-[6px] w-[125px] ml-auto self-stretch shrink-0 bg-[url(../assets/images/a1117613-6725-4c6a-a6ed-cf2dab2530af.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[311]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -1294,27 +1294,27 @@ export default function Main() {
                 <span className="flex w-[140px] justify-center items-center self-stretch grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[313]">
                   Получение РВ
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[url(../assets/images/c67bb97c-46f5-44d0-b351-9c61c415cb82.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[314]" />
+                <div className="h-[6px] w-[140px] self-stretch shrink-0 bg-[url(../assets/images/c67bb97c-46f5-44d0-b351-9c61c415cb82.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[314]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
               <div className="flex h-[54px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[315]">
-                <span className="flex w-[148px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[316]">
+                <span className="flex w-[148px] mx-auto justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[316]">
                   Постановка
                   <br />
                   на кадастровый учет
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[#d9d9d9] rounded-[20px] relative overflow-hidden z-[317]" />
+                <div className="h-[6px] w-[148px] mx-auto self-stretch shrink-0 bg-[#d9d9d9] rounded-[20px] relative overflow-hidden z-[317]" />
               </div>
               </SwiperSlide>
               <SwiperSlide>
               <div className="flex h-[54px] flex-col gap-[8px] justify-end items-center shrink-0 flex-nowrap opacity-30 relative z-[318]">
-                <span className="flex w-[121px] justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[319]">
+                <span className="flex w-[121px] mx-auto justify-center items-center grow shrink-0 basis-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center overflow-hidden z-[319]">
                   Передача
                   <br />
                   под заселение
                 </span>
-                <div className="h-[6px] self-stretch shrink-0 bg-[#d9d9d9] rounded-[20px] relative overflow-hidden z-[320]" />
+                <div className="h-[6px] w-[121px] mx-auto self-stretch shrink-0 bg-[#d9d9d9] rounded-[20px] relative overflow-hidden z-[320]" />
               </div>
               </SwiperSlide>
             </Swiper>
