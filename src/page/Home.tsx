@@ -15,6 +15,25 @@ const customers = [
 
 const Home = () => {
 
+  const [isRotate1, setIsRotated1] = useState(false);
+  const [isRotate2, setIsRotated2] = useState(false);
+  const [isRotate3, setIsRotated3] = useState(false);
+
+  /*-----------------------------------------------------------------------------*/
+
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [activeButtons, setActiveButtons] = useState<string[]>([]);
+
+  const toggleButton = (buttonName: string) => {
+    setActiveButtons((prev: string[]) =>
+      prev.includes(buttonName)
+        ? prev.filter((name: string) => name !== buttonName)
+        : [...prev, buttonName]
+    );
+  };
+
+  /*-----------------------------------------------------------------------------*/
+
   const [selectedPolicy, setSelectedPolicy] = useState<string | null>(null);
   const [isOpen1, setIsOpen1] = useState<boolean>(false);
 
@@ -41,7 +60,16 @@ const Home = () => {
     return selectedPolicy;
   };
 
-  // Получение метки для второго блока
+  const toggleOpen1 = () => {
+    setIsOpen1((prev) => !prev);
+    setIsRotated2((prev) => !prev);
+  };
+
+  const toggleOpen2 = () => {
+    setIsOpen2((prev) => !prev);
+    setIsRotated3((prev) => !prev);
+  };
+
   const getLabel2 = () => {
     if (selectedCustomers.length === 0) return 'Выберите заказчиков';
     return selectedCustomers.join(', ');
@@ -65,6 +93,11 @@ const Home = () => {
     return minYear === maxYear ? `${minYear}` : `${minYear} - ${maxYear}`;
   };
 
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev);
+    setIsRotated1((prev) => !prev);
+  };
+
   /*-----------------------------------------------------------------------------*/
 
   const [activeButton1, setActiveButton1] = useState("objects");
@@ -74,7 +107,7 @@ const Home = () => {
   /*-----------------------------------------------------------------------------*/
 
   return (
-    <div className="main-container w-[1920px] h-[878px] bg-[#f1f3f7] relative overflow-hidden mx-auto my-0">
+    <div className="main-container w-[1920px] h-screen bg-[#f1f3f7] relative overflow-hidden mx-auto my-0">
       <div className="flex w-[1650px] justify-between items-center flex-nowrap relative mt-[48px] mr-0 mb-0 ml-[135px]">
         <div className="flex w-[298px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[1]">
           <div className="w-[298px] h-[64px] shrink-0 bg-[url(../assets/images/9c814f35-9f91-48d5-b4e1-996cdbba88ff.png)] bg-cover bg-no-repeat relative overflow-hidden z-[2]" />
@@ -126,11 +159,11 @@ const Home = () => {
           </span>
           <div className="relative w-[166px]">
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleOpen}
             className="flex w-[163px] font-['Inter'] h-[53px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center shrink-0 flex-nowrap bg-[#f9f9f9] rounded-[16px] border-solid border border-[#d5d5d5] relative z-[503]"
           >
             {getLabel()}
-            <div className="w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[503]"></div>
+            <div className={`w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[503] ${isRotate1 ? 'rotate-0' : 'rotate-180'}`}></div>
           </button>
           {isOpen && (
             <div className="absolute mt-2 w-[155px] h-[159px] bg-white border border-[#D6D6D6] rounded-[16px] shadow-md p-2 overflow-auto scrollbar-thin scrollbar-thumb-[#556981]/30 scrollbar-track-transparent scrollbar-thumb-rounded-[20px] scrollbar-w-[8px] scrollbar-h-[49px] z-[503]">
@@ -454,11 +487,11 @@ const Home = () => {
         </span>
         <div>
           <button
-            onClick={() => setIsOpen1(!isOpen1)}
+            onClick={toggleOpen1}
             className="flex w-[410px] font-['Inter'] h-[53px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center shrink-0 flex-nowrap bg-[#f9f9f9] rounded-[16px] border-solid border border-[#d5d5d5] relative z-[503]"
           >
             {getLabel1()}
-            <div className="w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[503]"></div>
+            <div className={`w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[503] ${isRotate2 ? 'rotate-0' : 'rotate-180'}`}></div>
           </button>
           {isOpen1 && (
             <div className="absolute mt-2 w-[410px] h-[159px] bg-white border border-[#D6D6D6] rounded-[16px] shadow-md p-2 overflow-auto scrollbar-thin scrollbar-thumb-[#556981]/30 scrollbar-track-transparent scrollbar-thumb-rounded-[20px] scrollbar-w-[8px] scrollbar-h-[49px] z-[503]">
@@ -475,17 +508,17 @@ const Home = () => {
           )}
         </div>
       </div>
-      <div className="flex w-[410px] h-[147px] flex-col gap-[24px] items-start flex-nowrap absolute top-[428px] left-[1375px] z-[502]">
-        <span className="h-[17px] self-stretch shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[502]">
+      <div className="flex w-[410px] h-[147px] flex-col items-start flex-nowrap absolute top-[428px] left-[1375px] z-[502]">
+        <span className="h-[17px] self-stretch shrink-0 basis-auto font-['Inter'] mb-[24px] text-[24px] font-medium leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[502]">
           Заказчик
         </span>
         <div className="mb-4">
           <button
-            onClick={() => setIsOpen2(!isOpen2)}
+            onClick={toggleOpen2}
             className="flex w-[410px] font-['Inter'] h-[53px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center shrink-0 flex-nowrap bg-[#f9f9f9] rounded-[16px] border-solid border border-[#d5d5d5] relative z-[502]"
           >
             {getLabel2()}
-            <div className="w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[502]"></div>
+            <div className={`w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[502] ${isRotate3 ? 'rotate-0' : 'rotate-180'}`}></div>
           </button>
           {isOpen2 && (
             <div className="absolute mt-2 w-[410px] h-[159px] bg-white border border-[#D6D6D6] rounded-[16px] shadow-md p-2 overflow-auto scrollbar-thin scrollbar-thumb-[#556981]/30 scrollbar-track-transparent scrollbar-thumb-rounded-[20px] scrollbar-w-[8px] scrollbar-h-[49px] z-[502]">
@@ -501,13 +534,13 @@ const Home = () => {
             </div>
           )}
         </div>
-        <div className="flex">
+        <div className="flex gap-[5px]">
           {selectedCustomers.map((customer, index) => (
             <div
               key={index}
               className="flex items-center bg-white px-3 py-1 rounded-[8px]"
             >
-              <span className="text-[18px] font-normal text-[#161616]">{customer}</span>
+              <span className="text-[18px] whitespace-nowrap font-normal text-[#161616]">{customer}</span>
               <button
                 onClick={() => handleRemoveCustomer(customer)}
                 className="ml-2 text-[#C00000] text-xl"
@@ -518,48 +551,84 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex w-[330px] h-[37px] gap-[12px] items-center flex-nowrap absolute top-[548px] left-[1375px] z-40">
-        <span className="h-[17px] shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[41]">
-          Расширенные фильтры
-        </span>
-        <div className="flex w-[40px] h-[37px] gap-[8px] items-center shrink-0 flex-nowrap relative z-[42]">
-          <div className="flex w-[40px] h-[37px] pt-[12px] pr-[24px] pb-[12px] pl-[24px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[6px] relative z-[43]">
-            <div className="w-[12px] h-[3px] shrink-0 bg-[url(../assets/images/f5c56778-84ba-4fa7-b57c-af50bf4e0362.png)] bg-cover bg-no-repeat relative z-[44]" />
-          </div>
-        </div>
-      </div>
-      <div className="flex w-[410px] h-[172px] flex-col gap-[16px] items-start flex-nowrap absolute top-[596px] left-[1375px] z-[45]">
-        <span className="h-[13px] self-stretch shrink-0 font-['Inter'] text-[18px] font-medium leading-[13px] text-[#161616] relative text-left whitespace-nowrap z-[46]">
-          По уровням
-        </span>
-        <div className="h-[143px] self-stretch shrink-0 relative z-[47]">
-          <div className="flex w-[345px] gap-[12px] items-center flex-nowrap relative z-[48] mt-0 mr-0 mb-0 ml-0">
-            <span className="flex w-[9px] h-[13px] justify-center items-start shrink-0 font-['Inter'] text-[18px] font-medium leading-[13px] text-[#4f4f4f] relative text-center whitespace-nowrap z-[49]">
-              1
+      <div className="absolute top-[580px] right-[210px]">
+        <div className="relative">
+          <div
+            className="flex w-[330px] h-[37px] gap-[12px] items-center flex-nowrap cursor-pointer"
+            onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+          >
+            <span className="h-[17px] shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[17px] text-[#161616] relative text-left whitespace-nowrap">
+              Расширенные фильтры
             </span>
-            <div className="flex w-[324px] gap-[8px] items-center shrink-0 flex-nowrap relative z-50">
-              <button className="flex w-[95px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-none relative z-[51] pointer">
-                <span className="flex w-[63px] h-[13px] justify-center items-start shrink-0 basis-auto font-['Inter'] text-[18px] font-normal leading-[13px] text-[#161616] relative text-center whitespace-nowrap z-[52]">
-                  Жилые
-                </span>
-              </button>
-              <button className="flex w-[116px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-none relative z-[53] pointer">
-                <span className="flex w-[84px] h-[13px] justify-center items-start shrink-0 basis-auto font-['Inter'] text-[18px] font-normal leading-[13px] text-[#161616] relative text-center whitespace-nowrap z-[54]">
-                  Нежилые
-                </span>
-              </button>
-              <button className="flex w-[97px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-none relative z-[55] pointer">
-                <span className="flex w-[65px] h-[13px] justify-center items-start shrink-0 basis-auto font-['Inter'] text-[18px] font-normal leading-[13px] text-[#161616] relative text-center whitespace-nowrap z-[56]">
-                  Дороги
-                </span>
-              </button>
+            <div className="flex w-[40px] h-[37px] gap-[8px] items-center shrink-0 flex-nowrap relative">
+              <div className="flex w-[40px] h-[37px] pt-[12px] pr-[24px] pb-[12px] pl-[24px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[6px] relative">
+                <div
+                  className={`w-[14px] h-[7px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat ${
+                    isFiltersOpen ? "rotate-0" : "rotate-180"
+                  }`}
+                />
+              </div>
             </div>
           </div>
-          <button className="w-[90px] h-[37px] bg-[#fff] rounded-[12px] border-none relative z-[57] pointer mt-[16px] mr-0 mb-0 ml-[22.5px]">
-            <span className="flex w-[58px] h-[13px] justify-center items-start font-['Inter'] text-[18px] font-normal leading-[13px] text-[#161616] absolute top-[12px] left-[16px] text-center whitespace-nowrap z-[58]">
-              Метро
-            </span>
-          </button>
+          {isFiltersOpen && (
+            <div className="flex w-[330px] h-auto flex-col gap-[16px] items-start flex-nowrap mt-4">
+              <span className="h-[13px] self-stretch shrink-0 font-['Inter'] text-[18px] font-medium leading-[13px] text-[#161616] relative text-left whitespace-nowrap">
+                По уровням
+              </span>
+
+              {/* Блок 1 */}
+              <div className="h-auto self-stretch shrink-0 relative">
+                <div className="flex w-[345px] gap-[12px] items-center flex-nowrap relative">
+                  <span className="flex w-[9px] h-[13px] justify-center items-start shrink-0 font-['Inter'] text-[18px] font-medium leading-[13px] text-[#4f4f4f] relative text-center whitespace-nowrap">
+                    1
+                  </span>
+                  <div className="flex w-[324px] gap-[8px] items-center shrink-0 flex-nowrap relative">
+                    {["Жилые", "Нежилые", "Дороги"].map((name) => (
+                      <button
+                        key={name}
+                        className={`flex w-[95px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] border-none relative transition-colors duration-300 ${
+                          activeButtons.includes(name) ? "bg-[#7D7D7D] text-white" : "bg-[#fff] text-[#161616]"
+                        }`}
+                        onClick={() => toggleButton(name)}
+                      >
+                        <span className="text-[18px] font-normal leading-[13px]">{name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  className={`w-[90px] h-[37px] rounded-[12px] border-none relative mt-[16px] ml-[22.5px] transition-colors duration-300 ${
+                    activeButtons.includes("Метро") ? "bg-[#7D7D7D] text-white" : "bg-[#fff] text-[#161616]"
+                  }`}
+                  onClick={() => toggleButton("Метро")}
+                >
+                  <span className="text-[18px] font-normal leading-[13px]">Метро</span>
+                </button>
+              </div>
+                
+              {/* Блок 2 */}
+              <div className="h-auto self-stretch shrink-0 relative">
+                <div className="flex w-[345px] gap-[12px] items-center flex-nowrap relative">
+                  <span className="flex w-[9px] h-[13px] justify-center items-start shrink-0 font-['Inter'] text-[18px] font-medium leading-[13px] text-[#4f4f4f] relative text-center whitespace-nowrap">
+                    2
+                  </span>
+                  <div className="flex w-[324px] gap-[8px] items-center shrink-0 flex-nowrap relative">
+                    {["Реновация", "Не реновация"].map((name) => (
+                      <button
+                        key={name}
+                        className={`flex w-[150px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] border-none relative transition-colors duration-300 ${
+                          activeButtons.includes(name) ? "bg-[#7D7D7D] text-white" : "bg-[#fff] text-[#161616]"
+                        }`}
+                        onClick={() => toggleButton(name)}
+                      >
+                        <span className="text-[18px] font-normal leading-[13px]">{name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

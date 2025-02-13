@@ -1,9 +1,15 @@
 import React from "react";
 import "./index.css";
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperRef } from "swiper";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Etaps = ()=> {
   return (
-    <div className="main-container w-[1920px] h-[2559px] bg-[#f1f3f7] relative overflow-hidden mx-auto my-0">
+    <div className="main-container w-[1920px] h-[2559px] bg-[#f1f3f7] relative mx-auto my-0">
       <div className="flex w-[336px] flex-col gap-[24px] items-start flex-nowrap relative mt-[141px] mr-0 mb-0 ml-[135px]">
         <a href="/dashboard" className="h-[13px] self-stretch shrink-0 font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#c00000] relative text-left whitespace-nowrap z-[1]">
           Назад
@@ -12,42 +18,49 @@ const Etaps = ()=> {
           Этапы реализации
         </span>
       </div>
-      <div className="w-[1920px] h-[193px] relative overflow-hidden z-[402] mt-[64px] mr-0 mb-0 ml-0">
-        <div className="flex w-[1746px] h-[193px] gap-[16px] items-center flex-nowrap absolute top-0 left-[84px] overflow-hidden z-[403]">
-          <div className="w-[9.5px] h-[27px] shrink-0 bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] bg-cover bg-no-repeat relative z-[404]" />
-          <div className="flex w-[320px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#c00000] relative overflow-hidden z-[405]">
-            <span className="flex w-[248px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[406]">
-              Устройство инженерных систем
-            </span>
-            <div className="flex flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[407]">
-              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[408]">
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[409]">
-                  План
-                </span>
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[410]">
-                  06.12.24
-                </span>
-              </div>
-              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[411]">
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[412]">
-                  Факт
-                </span>
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[413]">
-                  -
-                </span>
-              </div>
-              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[414]">
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[415]">
-                  Исполнитель
-                </span>
-                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[416]">
-                  ООО "ГП-МФС"
-                </span>
+      
+      <div className="flex max-w-[1800px] h-[193px] relative items-start z-[402] mt-[64px] mr-0 mb-0 ml-0">
+        <Swiper
+          className="flex w-[1800px] h-[193px] items-center flex-nowrap absolute top-0 left-[84px] overflow-hidden z-[403]"
+          slidesPerView={5}
+          spaceBetween={50}
+          loop={true}
+        >
+          <SwiperSlide className="flex w-[320px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#c00000] relative z-[405]">
+            <div>
+              <span className="flex w-[248px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[406]">
+                Устройство инженерных систем
+              </span>
+              <div className="flex flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[407]">
+                <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[408]">
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[409]">
+                    План
+                  </span>
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[410]">
+                    06.12.24
+                  </span>
+                </div>
+                <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[411]">
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[412]">
+                    Факт
+                  </span>
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[413]">
+                    -
+                  </span>
+                </div>
+                <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[414]">
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[415]">
+                    Исполнитель
+                  </span>
+                  <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[416]">
+                    ООО "ГП-МФС"
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-[11px] h-[27px] shrink-0 bg-[url(../assets/images/648cf12c-52c1-484e-b847-b9ee2ffebb00.png)] bg-cover bg-no-repeat relative z-[417]" />
-          <div className="flex w-[304px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative overflow-hidden z-[418]">
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+          <SwiperSlide className="flex w-[304px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[418]">
             <span className="flex w-[199px] h-[58px] justify-start items-center shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[419]">
               Отделочные работы
             </span>
@@ -77,9 +90,9 @@ const Etaps = ()=> {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="w-[11px] h-[27px] shrink-0 bg-[url(../assets/images/fb6ba1e1-6619-4869-8eed-c63cbbc0b0cd.png)] bg-cover bg-no-repeat relative z-[430]" />
-          <div className="flex w-[304px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative overflow-hidden z-[431]">
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+          <SwiperSlide className="flex w-[304px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[431]">
             <span className="flex w-[232px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[432]">
               Благоустройство территории
             </span>
@@ -109,9 +122,9 @@ const Etaps = ()=> {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="w-[11px] h-[27px] shrink-0 bg-[url(../assets/images/3f42584d-d357-4f4d-8898-17ec6081604c.png)] bg-cover bg-no-repeat relative z-[443]" />
-          <div className="flex w-[328px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative overflow-hidden z-[444]">
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+          <SwiperSlide className="flex w-[328px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[444]">
             <span className="flex w-[256px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[445]">
               Получение ЗОС
             </span>
@@ -141,9 +154,9 @@ const Etaps = ()=> {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="w-[11px] h-[27px] shrink-0 bg-[url(../assets/images/42c90778-915e-47f2-8e53-6160af1288bf.png)] bg-cover bg-no-repeat relative z-[456]" />
-          <div className="flex w-[306px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative overflow-hidden z-[457]">
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+          <SwiperSlide className="flex w-[306px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[457]">
             <span className="flex w-[234px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[458]">
               Получение РВ
             </span>
@@ -173,9 +186,41 @@ const Etaps = ()=> {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="w-[11px] h-[27px] bg-[url(../assets/images/770cdccc-9ac7-4c17-ba69-e326c854622d.png)] bg-cover bg-no-repeat absolute top-[83.5px] left-[1844.5px] z-[469]" />
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+          <SwiperSlide className="flex w-[306px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[457]">
+            <span className="flex w-[234px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[458]">
+              Получение РВ
+            </span>
+            <div className="flex flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[459]">
+              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[460]">
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[461]">
+                  План
+                </span>
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[462]">
+                  30.12.24
+                </span>
+              </div>
+              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[463]">
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[464]">
+                  Факт
+                </span>
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[465]">
+                  -
+                </span>
+              </div>
+              <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[466]">
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[467]">
+                  Исполнитель
+                </span>
+                <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[468]">
+                  МГСН
+                </span>
+              </div>
+            </div>
+            <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div className="flex w-[1650px] h-[29px] justify-between items-start flex-nowrap relative z-[4] mt-[64px] mr-0 mb-0 ml-[135px]">
         <div className="flex w-[137px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[5]">
