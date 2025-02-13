@@ -18,7 +18,7 @@ import House22 from '../assets/images/House2-2.jpg';
 import House23 from '../assets/images/House2-3.jpg';
 import House24 from '../assets/images/House2-4.jpg';
 
-export default function Main() {
+const Dashboard = () => {
 
   const swiperRef = useRef<SwiperRef | null>(null);
 
@@ -58,9 +58,9 @@ export default function Main() {
 
   return (
     <div className="main-container w-[1920px] h-auto text-[0px] bg-[#f1f3f7] rounded-[16px] relative overflow-hidden mx-auto my-0 pb-14">
-      <span className="block h-[13px] font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#c00000] relative text-left whitespace-nowrap z-[457] mt-[148px] mr-0 mb-0 ml-[116px] cursor-pointer w-min">
+      <a href="/listing" className="block h-[13px] font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#c00000] relative text-left whitespace-nowrap z-[457] mt-[148px] mr-0 mb-0 ml-[116px] cursor-pointer w-min">
         Назад в Реестр объектов
-      </span>
+      </a>
       <div className="flex w-[1699px] h-[161px] pt-[36px] pr-[36px] pb-[36px] pl-[36px] flex-col gap-[16px] justify-center items-start flex-nowrap bg-[#fff] rounded-[12px] relative shadow-[0_10px_50px_0_#d2d4d8] mt-[24px] mr-0 mb-0 ml-[111px]">
         <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-[1]">
           <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
@@ -591,12 +591,12 @@ export default function Main() {
               </span>
             </button>
           </div>
-          <div className="flex w-[244px] h-[32px] pt-0 pr-[16px] pb-0 pl-[16px] gap-[5px] items-center shrink-0 flex-nowrap rounded-[8px] relative z-[238] cursor-pointer">
+          <a href='/listing' className="flex w-[244px] h-[32px] pt-0 pr-[16px] pb-0 pl-[16px] gap-[5px] items-center shrink-0 flex-nowrap rounded-[8px] relative z-[238] cursor-pointer">
             <div className="w-[24px] h-[24px] shrink-0 bg-[url(../assets/images/55199fcb-2f1b-4495-8396-55b1130156a6.png)] bg-cover bg-no-repeat relative z-[239]" />
             <span className="flex w-[183px] h-[13px] justify-start items-start shrink-0 font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#161616] relative text-left whitespace-nowrap z-[240]">
               Вернуться в реестр
             </span>
-          </div>
+          </a>
         </div>
         <div className="flex w-[803px] h-[100px] gap-[16px] items-center flex-nowrap absolute top-[61px] left-[896px] z-[900]">
           <div className="flex w-[257px] pt-[5px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[7px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[8px] relative shadow-[0_10px_50px_0_#d2d4d8] z-[500]">
@@ -1320,13 +1320,15 @@ export default function Main() {
             </Swiper>
             </div>
           </div>
-          <button className="flex w-[128px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] gap-[12px] items-center shrink-0 flex-nowrap bg-[#f1f3f7] rounded-[4px] border-none relative z-[322] pointer">
+          <a href='/etaps' className="flex w-[128px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] gap-[12px] items-center shrink-0 flex-nowrap bg-[#f1f3f7] rounded-[4px] border-none relative z-[322] pointer">
             <span className="h-[11px] shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#161616] relative text-left whitespace-nowrap z-[323]">
               Все этапы
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   );
 }
+
+export default Dashboard;
