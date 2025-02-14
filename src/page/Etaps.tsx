@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import React from "react";
 import "./index.css";
 import 'swiper/css';
@@ -8,6 +9,22 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const Etaps = ()=> {
+
+  const swiperRef = useRef<SwiperRef | null>(null);
+
+  const handleNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+  
+  const handlePrevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+
   return (
     <div className="main-container w-[1920px] h-[2559px] bg-[#f1f3f7] relative mx-auto my-0">
       <div className="flex w-[336px] flex-col gap-[24px] items-start flex-nowrap relative mt-[141px] mr-0 mb-0 ml-[135px]">
@@ -20,11 +37,14 @@ const Etaps = ()=> {
       </div>
       
       <div className="flex max-w-[1800px] h-[193px] relative items-start z-[402] mt-[64px] mr-0 mb-0 ml-0">
+        <div className="flex w-[9.5px] h-[27px] justify-center items-center flex-nowrap bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] bg-cover bg-no-repeat relative left-[60px] top-[45%] z-[600]" onClick={handleNextSlide}/>
         <Swiper
+          onSwiper={(swiper: SwiperRef) => (swiperRef.current = swiper)}
           className="flex w-[1800px] h-[193px] items-center flex-nowrap absolute top-0 left-[84px] overflow-hidden z-[403]"
           slidesPerView={5}
           spaceBetween={50}
           loop={true}
+          modules={[Navigation]}
         >
           <SwiperSlide className="flex w-[320px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#c00000] relative z-[405]">
             <div>
@@ -221,6 +241,7 @@ const Etaps = ()=> {
             <div className="w-[9.5px] h-[27px] bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] absolute bg-cover bg-no-repeat top-[45%] -right-[30px] z-[404]" />
           </SwiperSlide>
         </Swiper>
+        <div className="flex w-[9.5px] h-[27px] justify-center items-center flex-nowrap bg-[url(../assets/images/054f5ae5-c140-41c8-8638-824215c6f4c7.png)] bg-cover bg-no-repeat relative left-[100px] top-[45%] z-[600]" onClick={handleNextSlide}/>
       </div>
       <div className="flex w-[1650px] h-[29px] justify-between items-start flex-nowrap relative z-[4] mt-[64px] mr-0 mb-0 ml-[135px]">
         <div className="flex w-[137px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[5]">

@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { useState } from 'react';
+import { Filter } from "../assets/images/filter";
 
 const buttons1 = [
   { id: 9, label: "Жилые", count: 13 },
@@ -27,6 +28,8 @@ const violationsButtons = [
 
 const Listing = () => {
 
+  const [isFilled, setIsFilled] = useState(false);
+
   const [isRotated, setIsRotated] = useState(false);
 
   const [isVisible, setIsVisible] = useState(false);
@@ -42,6 +45,11 @@ const Listing = () => {
     setSelectedFilter(filter);
     setIsVisible(false);
     setIsRotated(!isRotated);
+    setIsFilled(true);
+  };
+
+  const toggleIconFill = () => {
+    setIsFilled(false);
   };
 
   /*--------------------------------------------------------------------------------*/
@@ -82,8 +90,8 @@ const Listing = () => {
         <div className="flex w-[1090px] h-[61px] pt-[24px] pr-[8px] pb-[24px] pl-[36px] gap-[10px] items-center flex-nowrap bg-[#fff] rounded-[12px] absolute top-0 left-0 overflow-hidden z-[86]">
           <input className="w-[1090px] h-[61px] shrink-0 bg-transparent border-none absolute pl-8 top-0 left-0 z-[88]" placeholder="Поиск по УИНу, адресу, типу, наименованию, подрядчику, заказчику объекта" />
         </div>
-        <div className="flex w-[61px] h-[61px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center flex-nowrap bg-[#fff] rounded-[8px] absolute top-0 left-[1349px] z-[89] cursor-pointer">
-          <div className="w-[18px] h-[18.378px] shrink-0 bg-[url(../assets/images/45d44d3a-3753-4e97-9b44-124233c5612a.png)] bg-cover bg-no-repeat relative z-[90]" />
+        <div onClick={toggleIconFill} className="flex w-[61px] h-[61px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center flex-nowrap bg-[#fff] rounded-[8px] absolute top-0 left-[1349px] z-[89] cursor-pointer">
+          <Filter className={`w-[18px] h-[18.378px] ${isFilled ? 'fill-current text-[#c00000]' : 'fill-none'}`} />
         </div>
         <button
           onClick={toggleVisibility}

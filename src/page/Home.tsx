@@ -43,6 +43,7 @@ const Home = () => {
   const handlePolicyClick = (policy: string) => {
     setIsOpen1(false);
     setSelectedPolicy(policy);
+    setIsRotated2(false);
   };
 
   const handleAddCustomer = (customer: string) => {
@@ -515,9 +516,9 @@ const Home = () => {
         <div className="mb-4">
           <button
             onClick={toggleOpen2}
-            className="flex w-[410px] font-['Inter'] h-[53px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center shrink-0 flex-nowrap bg-[#f9f9f9] rounded-[16px] border-solid border border-[#d5d5d5] relative z-[502]"
+            className="flex w-[410px] h-[53px] px-[24px] justify-between items-center bg-[#f9f9f9] rounded-[16px] border border-[#d5d5d5] relative z-[502]"
           >
-            {getLabel2()}
+            <span className="block truncate max-w-[calc(100%-30px)] font-['Inter']">{getLabel2()}</span>
             <div className={`w-[14px] h-[6.5px] shrink-0 bg-[url(../assets/images/52dc046d-4c23-4424-9f56-5b090cbd3cfe.png)] bg-cover bg-no-repeat relative z-[502] ${isRotate3 ? 'rotate-0' : 'rotate-180'}`}></div>
           </button>
           {isOpen2 && (
@@ -534,7 +535,7 @@ const Home = () => {
             </div>
           )}
         </div>
-        <div className="flex gap-[5px]">
+        <div className="flex gap-[5px] flex-wrap">
           {selectedCustomers.map((customer, index) => (
             <div
               key={index}
@@ -551,7 +552,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="absolute top-[580px] right-[210px]">
+      <div className="absolute top-[660px] right-[210px]">
         <div className="relative">
           <div
             className="flex w-[330px] h-[37px] gap-[12px] items-center flex-nowrap cursor-pointer"
